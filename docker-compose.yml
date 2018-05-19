@@ -1,9 +1,11 @@
 version: "2"
 services:
-  api:
+  fruits:
     build: ./fruits
+    container_name: fruits
     volumes:
-      - ./fruits:/app
+      - './fruits:/app'
+      - './util:/app/util'
     ports:
       - "80:80"
     links:

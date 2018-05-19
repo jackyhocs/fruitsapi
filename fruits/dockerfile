@@ -1,0 +1,13 @@
+FROM python:3.6-alpine
+
+WORKDIR /app
+COPY fruits ./fruits
+COPY util ./util
+
+ADD . .
+
+RUN python3 -m pip install -r requirements.txt
+
+EXPOSE 80
+
+CMD ["python3", "app.py"]
